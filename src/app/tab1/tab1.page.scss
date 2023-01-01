@@ -1,0 +1,50 @@
+#container {
+    text-align: center;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  #container strong {
+    font-size: 20px;
+    line-height: 26px;
+  }
+  
+  #container p {
+    font-size: 16px;
+    line-height: 22px;
+  
+    color: #8c8c8c;
+  
+    margin: 0;
+  }
+  
+  #container a {
+    text-decoration: none;
+  }
+  ion-toolbar{
+    --ion-background-color: var(--ion-color-nuance-clair);
+    height: 100%;
+    border-radius: 0 0 50px 50px;
+  }
+  ion-header{
+    height: 15%;
+  }
+  // .button{
+  //   justify-content: center;
+  //   width: 75%;
+  //   margin-left: 2.5rem;
+  // }
+  ion-button{
+    --ion-background-color: linear-gradient(var(--ion-color-nuance-clair), var(--ion-color-nuance-sombre)) !important;
+    padding: 0px 82px;
+  }
+  ion-title{
+    text-align: center;
+  }
+  
+
+  

@@ -1,0 +1,23 @@
+#container{
+    border-radius: 30px;
+    height: 30%;
+}
+.container{
+    // border-radius: 32px 33px 0px 0px;
+    background-color: #ff735c;
+    height: 100%;
+}
+.frame {
+    color: #d5d5d5;
+    height: 350px;
+    width: 350px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+ion-grid{
+    background-color: transparent;
+}

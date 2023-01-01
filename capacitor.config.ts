@@ -1,8 +1,8 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
-  appName: 'devMobileProjet',
+  appId: 'com.driver.app',
+  appName: 'Bus Driver',
   webDir: 'www',
   bundledWebRuntime: false
 };
