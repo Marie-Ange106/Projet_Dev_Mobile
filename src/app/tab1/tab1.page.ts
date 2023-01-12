@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { QRScanner, QRScannerStatus } from '@ionic-native/qr-scanner/ngx';
+import { BarcodeScannerOptions,BarcodeScanner } from '@awesome-cordova-plugins/barcode-scanner/ngx';
+
 
 @Component({
   selector: 'app-tab1',
@@ -9,38 +10,30 @@ import { QRScanner, QRScannerStatus } from '@ionic-native/qr-scanner/ngx';
 export class Tab1Page {
 
 public showCamera = false;
-public textScanned: string = '';
+scannedData!: {}; // variable qui va récuperer les informations scannées
+barcodeScannerOptions!: BarcodeScannerOptions ;
 
-  constructor(private qrScanner: QRScanner) {}
+  constructor(private barcodeScanner: BarcodeScanner) {
+    this.barcodeScannerOptions = {
+      showTorchButton: true, //afficher le bouton de la torche
+      showFlipCameraButton: true //afficher le bouton pour retourner la caméra avant ou arrière
+    };
+  }
 
   scanCode() {
     this.showCamera = true;
-    // Optionally request the permission early
-    this.qrScanner.prepare()
-    .then((status: QRScannerStatus) => {
-      if (status.authorized) {
-        // start scanning
-        console.log('Scan en cours...' + JSON.stringify(status));
-        const scanSub = this.qrScanner.scan().subscribe((text: any) => {
-          console.log('Scanned something', text.result);
-          this.textScanned = text.result;
-          this.qrScanner.hide(); // hide camera preview
-          scanSub.unsubscribe(); // stop scanning
-          this.showCamera = false;
-        });
-      } else if (status.denied) {
-        // camera permission was permanently denied
-      } else {
-        // permission was denied, but not permanently. You can ask for permission again at a later time.
-      }
-    })
-    .catch((e: any) => console.log('Error is', e));
+    this.barcodeScanner
+      .scan()
+      .then(barcodeData => {
+        alert("Informations de l'étudiant " + JSON.stringify(barcodeData));
+        this.scannedData = barcodeData;
+        this.showCamera = false;
+      })
+      .catch(err => {
+        console.log("Error", err);
+      });
   }
 
-  closeCamera(){
-    this.showCamera = false;
-    this.qrScanner.hide(); // hide camera preview
-    this.qrScanner.destroy();
-  }
+
 
 }
