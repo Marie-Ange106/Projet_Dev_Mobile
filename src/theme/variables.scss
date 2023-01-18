@@ -4,20 +4,20 @@
 /** Ionic CSS Variables **/
 :root {
   /** primary **/
-  --ion-color-primary: #3880ff;
-  --ion-color-primary-rgb: 56, 128, 255;
-  --ion-color-primary-contrast: #ffffff;
-  --ion-color-primary-contrast-rgb: 255, 255, 255;
-  --ion-color-primary-shade: #3171e0;
-  --ion-color-primary-tint: #4c8dff;
+  --ion-color-primary: #181c3d;
+	--ion-color-primary-rgb: 24,28,61;
+	--ion-color-primary-contrast: #ffffff;
+	--ion-color-primary-contrast-rgb: 255,255,255;
+	--ion-color-primary-shade: #151936;
+	--ion-color-primary-tint: #2f3350;
 
   /** secondary **/
-  --ion-color-secondary: #3dc2ff;
-  --ion-color-secondary-rgb: 61, 194, 255;
-  --ion-color-secondary-contrast: #ffffff;
-  --ion-color-secondary-contrast-rgb: 255, 255, 255;
-  --ion-color-secondary-shade: #36abe0;
-  --ion-color-secondary-tint: #50c8ff;
+  --ion-color-secondary: #f65464;
+	--ion-color-secondary-rgb: 246,84,100;
+	--ion-color-secondary-contrast: #000000;
+	--ion-color-secondary-contrast-rgb: 0,0,0;
+	--ion-color-secondary-shade: #d84a58;
+	--ion-color-secondary-tint: #f76574;
 
   /** tertiary **/
   --ion-color-tertiary: #5260ff;
@@ -139,7 +139,22 @@
 	--ion-color-shade: var(--ion-color-nuance-sombre-shade);
 	--ion-color-tint: var(--ion-color-nuance-sombre-tint);
 }
-
+.ion-color-primary {
+	--ion-color-base: var(--ion-color-primary);
+	--ion-color-base-rgb: var(--ion-color-primary-rgb);
+	--ion-color-contrast: var(--ion-color-primary-contrast);
+	--ion-color-contrast-rgb: var(--ion-color-primary-contrast-rgb);
+	--ion-color-shade: var(--ion-color-primary-shade);
+	--ion-color-tint: var(--ion-color-primary-tint);
+}
+.ion-color-secondary {
+	--ion-color-base: var(--ion-color-secondary);
+	--ion-color-base-rgb: var(--ion-color-secondary-rgb);
+	--ion-color-contrast: var(--ion-color-secondary-contrast);
+	--ion-color-contrast-rgb: var(--ion-color-secondary-contrast-rgb);
+	--ion-color-shade: var(--ion-color-secondary-shade);
+	--ion-color-tint: var(--ion-color-secondary-tint);
+}
 @media (prefers-color-scheme: dark) {
   /*
    * Dark Colors

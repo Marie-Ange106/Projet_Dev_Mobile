@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+    api: 'https://backenddevmobile-production.up.railway.app/'
+  //api: 'http://localhost:8091/'
 };
 
 /*

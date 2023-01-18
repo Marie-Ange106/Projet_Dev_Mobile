@@ -1,36 +1,50 @@
-<ion-header [translucent]="true" class="ion-no-border">
+<ion-header [translucent]="true" class="ion-no-border" >
   <ion-toolbar>
+    <!-- <div class="back-circle"></div> -->
     <!-- <ion-title>Home</ion-title> -->
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-avatar>
+        <img src="assets/images/p5.jpg" alt="">
+      </ion-avatar>
+    </ion-buttons>
   </ion-toolbar>
+  <ion-toolbar>
+    <div class="logo">
+      <img src="assets/images/logos.png" alt="">
+    </div>
+  </ion-toolbar> 
 </ion-header>
 
 <ion-content>
   <div id="container">
-    <ion-icon *ngIf="showCamera" class="frame" name="qr-scanner"></ion-icon>
-    <div *ngIf="!showCamera">
+    <ion-icon  class="frame" name="qr-scanner"></ion-icon>
+    <div>
       <div>
-        <img src="assets/images/home.jpg" alt="" />
+        <img src="assets/images/Bus-driver-clair.gif" alt="" />
       </div>
     </div>
   </div>
 </ion-content>
 
-<ion-footer class="ion-no-border">
+<ion-footer color="primary" class="ion-no-border" >
+  
   <ion-grid class="button">
     <ion-button
-      color="secondary"
+      
+      class="one"
+      color="light"
       expand="block"
       shape="round"
       fill="outline"
       (click)="scanCode()"
     >
-      <ion-icon slot="start" class="primary" name="qr-scanner"></ion-icon>
+      <ion-icon slot="start" color="light" name="qr-scanner"></ion-icon>
       Scan a QR code
     </ion-button>
     <br />
-    <ion-button expand="block" shape="round">Refresh my position</ion-button>
+    <ion-button  color="secondary" class="two" expand="block" shape="round"><ion-icon color="primary" name="location-outline"></ion-icon>Refresh my position</ion-button>
   </ion-grid>
 </ion-footer>
