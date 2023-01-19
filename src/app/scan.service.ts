@@ -22,7 +22,7 @@ export class ScanService {
   constructor(private httpClient: HttpClient) { }
 
   public scan(qrcode:any) {
-    return this.httpClient.post(BASE_API+'etudiant/qrcode', qrcode.text);
+    return this.httpClient.get(BASE_API+'etudiant/email', qrcode.email);
   }
 
   public list() {

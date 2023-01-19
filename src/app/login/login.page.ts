@@ -37,39 +37,39 @@ export class LoginPage implements OnInit {
     return this.ionicForm.controls;
   }
 
-  onSubmit(){
-    this.login();
-    // this.route.navigate(['/tabs/tab1']);
+  // onSubmit(){
+  //   this.login();
+  //   // this.route.navigate(['/tabs/tab1']);
 
-    this.isSubmitted=true;
-    if (!this.ionicForm.valid){
-      console.log('Please provide all the required values!')
+  //   this.isSubmitted=true;
+  //   if (!this.ionicForm.valid){
+  //     console.log('Please provide all the required values!')
       
-    } else{
-      console.log(this.ionicForm.value)
-    }
-    //console.log(this.loginForm.value);
-  }
+  //   } else{
+  //     console.log(this.ionicForm.value)
+  //   }
+  //   //console.log(this.loginForm.value);
+  // }
   
 
 
-  registerForm(){
-    //this.route.navigate(['/register']);
-  }
+  // registerForm(){
+  //   //this.route.navigate(['/register']);
+  // }
 
   
-  login() {
-    console.log('moi',this.loginForm);
-    this.authService.login(this.loginForm).subscribe(
-      (data: any) => {
-      console.log('moimeme',data);
-      localStorage.setItem('jwt', data.accessToken);
-      localStorage.setItem('username', data.username);
-      this.db.initialisationDB();
-      this.db.saveLoginInfo(this.loginForm, data);
-      this.route.navigate(['/tabs/tab1']);
-    });
-  }
+  // login() {
+  //   console.log('moi',this.loginForm);
+  //   this.authService.login(this.loginForm).subscribe(
+  //     (data: any) => {
+  //     console.log('moimeme',data);
+  //     localStorage.setItem('jwt', data.accessToken);
+  //     localStorage.setItem('username', data.username);
+  //     this.db.initialisationDB();
+  //     this.db.saveLoginInfo(this.loginForm, data);
+  //     this.route.navigate(['/tabs/tab1']);
+  //   });
+  // }
 
   //loading
   async presentLoading() {
@@ -82,6 +82,27 @@ export class LoginPage implements OnInit {
     const { role, data } = await loading.onDidDismiss();
 
     console.log('Loading dismissed!');
-  }
+ }
+ 
+ onSubmit(){
+  this.login();
+  //console.log(this.loginForm.value);
+}
+registerForm(){
+  //this.route.navigate(['/register']);
+}
+
+login() {
+  console.log('moi',this.loginForm);
+  this.authService.login(this.loginForm).subscribe(
+    (data: any) => {
+    console.log('moimeme',data);
+    localStorage.setItem('jwt', data.accessToken);
+    localStorage.setItem('username', data.username);
+    this.db.initialisationDB();
+    this.db.saveLoginInfo(this.loginForm, data);
+    this.route.navigate(['/tabs/tab1']);
+  });
+}
 
 }

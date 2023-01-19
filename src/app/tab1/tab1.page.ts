@@ -36,9 +36,9 @@ barcodeScannerOptions!: BarcodeScannerOptions ;
       .scan()
       .then(barcodeData => {
         
-        // alert("Student Informations " + JSON.stringify(barcodeData));
+         alert("Student Informations " + JSON.stringify(barcodeData));
         this.scannedData = barcodeData;
-        // this.openDialog(barcodeData);
+         this.openDialog(barcodeData);
 
         console.log(barcodeData);
         this.bar=JSON.stringify(this.scannedData)
