@@ -8,11 +8,17 @@ import { ModalController } from '@ionic/angular';
   styleUrls: ['./modal-profil.page.scss'],
 })
 export class ModalProfilPage implements OnInit {
-
+   recuperer:any;
   constructor(private modalController: ModalController, private router:Router) { }
 a:any
   ngOnInit() {
+
     this.a=localStorage.getItem('username')
+
+    const retrieve =localStorage.getItem('username')
+    this.recuperer = JSON.parse(retrieve!) 
+    console.log(this.recuperer)
+
   }
   
   async close() {

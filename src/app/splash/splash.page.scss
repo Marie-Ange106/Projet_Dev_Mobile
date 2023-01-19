@@ -1,11 +1,50 @@
-ion-content{
-   --background:var(--ion-color-secondary)
-}
-@-webkit-keyframes swirl-in-fwd{0%{-webkit-transform:rotate(-540deg) scale(0);transform:rotate(-540deg) scale(0);opacity:0}100%{-webkit-transform:rotate(0) scale(1);transform:rotate(0) scale(1);opacity:1}}@keyframes swirl-in-fwd{0%{-webkit-transform:rotate(-540deg) scale(0);transform:rotate(-540deg) scale(0);opacity:0}100%{-webkit-transform:rotate(0) scale(1);transform:rotate(0) scale(1);opacity:1}}
-.container{
-    -webkit-animation:swirl-in-fwd .6s ease-out both;animation:swirl-in-fwd .6s ease-out both  
-}
-img{
-    height:220px ;
-    margin-top: 40%;
-}
+ion-content {
+    --background: var(--ion-color-secondary);
+  }
+  @-webkit-keyframes swirl-in-fwd {
+    0% {
+      -webkit-transform: rotate(-540deg) scale(0);
+      transform: rotate(-540deg) scale(0);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: rotate(0) scale(1);
+      transform: rotate(0) scale(1);
+      opacity: 1;
+    }
+  }
+  @keyframes swirl-in-fwd {
+    0% {
+      -webkit-transform: rotate(-540deg) scale(0);
+      transform: rotate(-540deg) scale(0);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: rotate(0) scale(1);
+      transform: rotate(0) scale(1);
+      opacity: 1;
+    }
+  }
+  .container {
+    -webkit-animation: swirl-in-fwd 0.6s ease-out both;
+    animation: swirl-in-fwd 0.6s ease-out both;
+  }
+  @media only screen and (min-width: 1024px) and (min-width: 1080px) {
+    img {
+      height: 586px;
+      margin-top: 5%;
+    }
+  }
+  @media only screen and (min-width: 375px) and (min-width: 400px) {
+    img {
+      height: 400px;
+      margin-top: 45%;
+    }
+  }
+  @media only screen and (min-width: 222px) and (max-width: 393px) {
+      img {
+        height: 400px;
+        margin-top: 50%;
+      }
+    }
+  
