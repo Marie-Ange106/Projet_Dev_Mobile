@@ -5,6 +5,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 
 const BASE_API = environment.api;
+const BASE_API1 = environment.api+'etudiant';
 const httpOptions = {
   headers: new HttpHeaders(
     {
@@ -22,7 +23,7 @@ export class ScanService {
   constructor(private httpClient: HttpClient) { }
 
   public scan(qrcode:any) {
-    return this.httpClient.get(BASE_API+'etudiant/email/', qrcode.email);
+    return this.httpClient.get(BASE_API+'etudiant/email/'+this.email);
   }
 
   public list() {
@@ -34,8 +35,13 @@ export class ScanService {
 
   }
 
-  email='honorenkot@gmail.com'
-  public findStudentByEmail(email: any) {
-    return this.httpClient.get(BASE_API+'/emailqr/'+ this.email);
+  email='honore.nkot@institutsaintjean.org'
+
+  public findStudentByEmail(email: string) {
+    return this.httpClient.get(BASE_API1+'/email/'+email);
+  }
+
+  public findStudentqrByEmail(email: any) {
+    return this.httpClient.get(BASE_API1+'/emailqr/'+ this.email);
   }
 }

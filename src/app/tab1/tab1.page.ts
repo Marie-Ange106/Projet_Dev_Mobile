@@ -29,6 +29,7 @@ barcodeScannerOptions!: BarcodeScannerOptions ;
   }
 
   bar:any
+  email='honore.nkot@institutsaintjean.org'
 
   scanCode() {
     this.showCamera = true;
@@ -43,28 +44,30 @@ barcodeScannerOptions!: BarcodeScannerOptions ;
         console.log(barcodeData);
         this.bar=JSON.stringify(this.scannedData)
         console.log('scann', this.bar)
-          this.scanservice.findStudentByEmail(barcodeData).subscribe(
-            (data:any)=>{
-              this.bar=JSON.stringify(data)
-              console.log('scann', this.bar)
-               localStorage.setItem('info',JSON.stringify(data));
-              // localStorage.setItem('username', data.username);
-               this.route.navigate(['/scan-success']);
+        
+    
+          // this.scanservice.scan(barcodeData).subscribe(
+          //   (data:any)=>{
+          //     this.bar=JSON.stringify(data)
+          //     console.log('scann', this.bar)
+          //      localStorage.setItem('info',JSON.stringify(data));
+          //     // localStorage.setItem('username', data.username);
+          //      this.route.navigate(['/scan-success']);
 
-            }
-          );
+          //   }
+          // );
 
-        // this.scanservice.scan(barcodeData).subscribe(
-        //   (data: any) => {
-        //    // console.log('infosetu',data.profil);
-        //    // console.log('infosetumat',data.matricule);
-        //    this.bar=JSON.stringify(data)
-        //    console.log('scann', this.bar)
-        //     localStorage.setItem('info',JSON.stringify(data));
-        //    // localStorage.setItem('username', data.username);
-        //     this.route.navigate(['/scan-success']);
-        //   }
-        // );
+        this.scanservice.findStudentByEmail(this.email).subscribe(
+          (data: any) => {
+           // console.log('infosetu',data.profil);
+           // console.log('infosetumat',data.matricule);
+           this.bar=JSON.stringify(data)
+           console.log('scann', this.bar)
+            localStorage.setItem('info',JSON.stringify(data));
+           // localStorage.setItem('username', data.username);
+            this.route.navigate(['/scan-success']);
+          }
+        );
         
         this.showCamera = false;
       })

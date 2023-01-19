@@ -10,8 +10,9 @@ import { ModalController } from '@ionic/angular';
 export class ModalProfilPage implements OnInit {
 
   constructor(private modalController: ModalController, private router:Router) { }
-
+a:any
   ngOnInit() {
+    this.a=localStorage.getItem('username')
   }
   
   async close() {
