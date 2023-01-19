@@ -72,20 +72,12 @@ export class LoginPage implements OnInit {
   // }
 
   //loading
-  async presentLoading() {
-    const loading = await this.loadingController.create({
-      message: 'Please wait for a few moment',
-      duration: 2000
-    });
-    await loading.present();
-
-    const { role, data } = await loading.onDidDismiss();
-
-    console.log('Loading dismissed!');
- }
  
+ open=false;
  onSubmit(){
   this.login();
+  // this.route.navigate(['/tabs/tab1']);
+  this.open=true;
   //console.log(this.loginForm.value);
 }
 registerForm(){
