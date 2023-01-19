@@ -22,7 +22,7 @@ export class ScanService {
   constructor(private httpClient: HttpClient) { }
 
   public scan(qrcode:any) {
-    return this.httpClient.get(BASE_API+'etudiant/email', qrcode.email);
+    return this.httpClient.get(BASE_API+'etudiant/email/', qrcode.email);
   }
 
   public list() {
@@ -32,5 +32,10 @@ export class ScanService {
   public count() {
     return this.httpClient.get(BASE_API+'etudiantcount/count');
 
+  }
+
+  email='honorenkot@gmail.com'
+  public findStudentByEmail(email: any) {
+    return this.httpClient.get(BASE_API+'/emailqr/'+ this.email);
   }
 }

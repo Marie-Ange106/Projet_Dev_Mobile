@@ -231,6 +231,8 @@ export class Tab2Page {
 
   printCurrentPosition = async () => {
     const coordinates = await Geolocation.getCurrentPosition();
+    console.log('Current :', coordinates);
+    
     this.lattitude = coordinates.coords.latitude;
     this.longitude = coordinates.coords.longitude;
     console.log('Current position:', this.lattitude, this.longitude);
@@ -240,8 +242,9 @@ export class Tab2Page {
   calculateAndDisplayRoute(
     directionsService: google.maps.DirectionsService,
     directionsRenderer: google.maps.DirectionsRenderer
+  
   ) {
-    // directionsService
+    // directionsService  directionsRenderer: google.maps.DirectionsRenderer
     //   .route({
     //     origin: {
     //       lat: this.lattitude,
@@ -305,19 +308,25 @@ export class Tab2Page {
         lng: this.longitude
       },
     });
-    directionsRenderer.setMap(map);
-    this.calculateAndDisplayRoute1(directionsService, directionsRenderer);
+   directionsRenderer.setMap(map);
+   this.calculateAndDisplayRoute1(directionsService, directionsRenderer);
 
   }
+
+
 
   calculateAndDisplayRoute1(directionsService:any, directionsRenderer:any) {
     directionsService
       .route({
         origin: {
-          lat: this.lattitude,
-          lng: this.longitude
+          // lat: this.lattitude,
+          // lng: this.longitude
+           lat: 3.8600704,
+          lng: 11.4
         },
         destination: {
+          // lat: this.lattitude,
+          // lng: this.longitude
           lat: 3.8600704,
           lng: 11.4
         },
