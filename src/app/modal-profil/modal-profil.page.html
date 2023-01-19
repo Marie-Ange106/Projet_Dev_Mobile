@@ -1,0 +1,73 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>modal-profil</ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="light" (click)="close()">
+        <ion-icon color="danger" name="close-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+
+  <div class="header">
+    <ion-buttons slot="start">
+      <ion-button color="light" (click)="close()">
+        <ion-icon color="danger" name="close-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <h2>Bus Driver</h2>
+  </div>
+
+  <div class="flex">
+    <div class="border-color">
+    <div class="border-white">
+      <div class="img-box">
+        <img src="assets/images/icon-prsn.png" alt="" />
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div class="content">
+
+    <ion-item  class="center">
+      <ion-icon color="primary" name="person-circle-outline"></ion-icon>
+      <ion-label> <span>My account</span> </ion-label>
+    </ion-item>
+    <br>
+    <ion-item lines="none">
+      <span class="info">Name: </span> <span class="space">Marie-Ange</span> 
+    </ion-item>
+    <ion-item lines="none">
+      <span class="info">Email: </span> <span class="space">marieange@gmail.com</span> 
+    </ion-item>
+    <br>
+    <br>
+
+    <ion-item  class="center">
+      <ion-icon color="primary" name="car"></ion-icon>
+      <ion-label><span>Information about bus</span> </ion-label>
+    </ion-item>
+    <br>
+    <ion-item lines="none">
+      <span class="info">Number: </span> <span class="space">03</span> 
+    </ion-item>
+    <ion-item lines="none">
+      <span class="info">Color: </span> <span class="space">Blue</span> 
+    </ion-item>
+    <br>
+    <br>
+
+
+    <!-- <ion-item lines="none">
+      <ion-icon color="primary" name="settings-outline"></ion-icon>
+      <ion-label><span>Setting</span> </ion-label>
+    </ion-item> -->
+  
+  <ion-button (click)="out()" class="down" color="primary" expand="block" shape="round"> <ion-icon class="left" name="exit-outline"></ion-icon> Signout</ion-button>
+
+  </div>
+  
+</ion-content>

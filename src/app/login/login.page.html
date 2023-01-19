@@ -1,0 +1,68 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar>
+    <div class="back-circle"></div>
+    <ion-title color="secondary" class="ion-text-center custom-font">Sign in</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="logo">
+    <img src="assets/images/logo.png" alt="">
+    <!-- <ion-icon color="primary" name="car"></ion-icon> -->
+  </div>
+
+  <svg
+    class="back-blob"
+    viewBox="0 0 200 200"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      fill="#181C3D"
+      d="M49.3,-25.6C63.2,-4.4,73.3,21.9,64.4,35.9C55.6,49.9,27.8,51.6,2.9,50C-22.1,48.3,-44.1,43.3,-53.3,29.1C-62.5,14.8,-58.9,-8.5,-47.9,-28.1C-36.8,-47.7,-18.4,-63.4,-0.4,-63.2C17.7,-63,35.4,-46.8,49.3,-25.6Z"
+      transform="translate(100 100)"
+    />
+  </svg>
+
+  <div class="ion-padding">
+    <form class="ion-padding" (ngSubmit)="onSubmit()">
+      <div class="wrap-input">
+        <input
+          class="input"
+          required
+          type="mail"
+          placeholder="Email"
+          [(ngModel)]="loginForm.username"
+          [ngModelOptions]="{standalone: true}"
+          type="text"
+
+        />
+      </div>
+      <!-- <span class="error ion-padding" *ngIf="isSubmitted && errorControl.mail.errors?.required"> 
+        Email is required!
+      </span>
+      <span class="error ion-padding" *ngIf="isSubmitted && errorControl.mail.errors?.pattern">
+        Please provide valid email!
+      </span>  -->
+
+      <div class="wrap-input">
+        <input
+          class="input"
+          required
+          type="password"
+          placeholder="Password"
+          [(ngModel)]="loginForm.password"
+          [ngModelOptions]="{standalone: true}"
+          type="password"
+          
+        />
+      </div>
+      <!-- <span class="error ion-padding" *ngIf="isSubmitted && errorControl.password.errors?.required"> Password is required.</span> -->
+
+      <div class="form-btn" color="secondary">
+        <button class="btn" type="submit" (click)="presentLoading()">submit</button>
+      </div>
+    </form>
+  </div>
+
+  
+</ion-content>

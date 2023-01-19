@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">devmobileproject</string>
+    <string name="title_activity_main">devmobileproject</string>
+    <string name="package_name">isj.ing4.isi</string>
+    <string name="custom_url_scheme">isj.ing4.isi</string>
+</resources>

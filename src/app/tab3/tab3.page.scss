@@ -1,0 +1,25 @@
+.img{
+  margin-left: 80px;
+}
+ion-toolbar{
+    --background:var(--ion-color-secondary);
+    border-radius: 0px 0px 0px 30px ;
+    height: 78px;
+}
+ion-header{
+    --backgroun:transparent
+ }
+.header{
+    color:var(--ion-color-secondary-contrast) ;
+    margin-left: 59px;
+}
+.content{
+    color:var(--ion-color-secondary);
+    margin-top: 23px;
+    text-align: center;
+    text-decoration: underline;
+    font-weight: bold;
+}
+ion-grid{
+    margin-top: 16px;
+}

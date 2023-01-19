@@ -1,0 +1,47 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+
+    <ion-grid>
+      <ion-row size="12">
+        <ion-col size="1">
+          <img class="img" src="assets/images/report.png" alt="" />
+        </ion-col>
+        <ion-col size="11">
+          <ion-title class="header">Report of the day</ion-title>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <h5 class="content">List of students transported</h5>
+
+  <ion-card *ngIf="results; else skeleton">
+    
+    <ion-item *ngFor="let i of results">
+      <ion-avatar slot="start">
+        <ion-img [src]="i.profil"></ion-img>
+      </ion-avatar>
+      <ion-label>{{i.nomComplet}}</ion-label>
+      <ion-badge slot="end">1</ion-badge>
+    </ion-item>
+    
+  </ion-card>
+
+  <ng-template #skeleton>
+
+    <ion-card>
+      <ion-item *ngFor="let i of [1,2,3,4,5,6,7]">
+        <ion-avatar slot="start">
+          <ion-skeleton-text [animated]="true"></ion-skeleton-text>
+        </ion-avatar>
+        <ion-label
+          ><ion-skeleton-text [animated]="true"></ion-skeleton-text
+        ></ion-label>
+      </ion-item>
+    </ion-card>
+
+  </ng-template>
+</ion-content>
